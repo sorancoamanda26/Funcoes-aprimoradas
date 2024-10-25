@@ -46,12 +46,14 @@ function mostraResultado(){
     caixaPerguntas.textContent = "Seguindo a suas respostas em nossa pesquisa, a viagem ideal para você seria referente à essas sugestões:"
     textoResultado.textContent = historiaFinal;
     caixaAlternativas.textContent = "";
+    caixaResultado.classList.add("mostrar");
     botaoJogarnovamente.addEventListener("click", jogarNovamente);
 }
 
 function jogarNovamente(){
     atual = 0;
     historiaFinal = "";
+    caixaResultado.classList.remove("mostrar");
     mostraPergunta();
 }
 
