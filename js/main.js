@@ -1,22 +1,21 @@
 import { aleatorio } from "./aleatorio.js";
-import { perguntas } from "./perguntas.js";
-
+import { perguntas } from "./pergunstas.js";
 
 const caixaPrincipal = document.querySelector(".caixa-principal");
 const caixaPerguntas = document.querySelector(".caixa-perguntas");
 const caixaAlternativas = document.querySelector(".caixa-alternativas");
 const caixaResultado = document.querySelector(".caixa-resultado");
-const textoResultado= document.querySelector(".texto-resultado");
-const botaoJogarnovamente = document.querySelector(".novamente-btn");
+const textoResultado = document.querySelector(".texto-resultado");
+const botaoJogarNovamente = document.querySelector(".novamente-btn");
 
 
-
-let atual = 0;
-let perguntaAtual;
+ 
+let atual = 0; 
+let perguntaAtual; 
 let historiaFinal = "";
 
-function mostraPergunta () {
-    if (atual>= perguntas.length){
+function mostraPergunta(){
+    if(atual >= perguntas.length){
         mostraResultado();
         return;
     }
@@ -28,11 +27,12 @@ function mostraPergunta () {
 
 function mostraAlternativas(){
     for (const alternativa of perguntaAtual.alternativas){
-        const botaoAlternativas = document.createElement ("button");
+        const botaoAlternativas = document.createElement("button");
         botaoAlternativas.textContent = alternativa.texto;
-        botaoAlternativas.addEventListener("click", () => respostaSelecionada(alternativa));
-        caixaAlternativas.appendChild (botaoAlternativas);
+        botaoAlternativas.addEventListener("click",() => respostaSelecionada(alternativa));
+        caixaAlternativas.appendChild(botaoAlternativas);
     }
+        
 }
 
 function respostaSelecionada(opcaoSelecionada){
@@ -43,11 +43,11 @@ function respostaSelecionada(opcaoSelecionada){
 }
 
 function mostraResultado(){
-    caixaPerguntas.textContent = "Seguindo a suas respostas em nossa pesquisa, a viagem ideal para você seria referente à essas sugestões:"
+    caixaPerguntas.textContent = "Seguindo suas respostas em nossa pesquisa, a viagem ideal para você seria referente à essas sugestões:";
     textoResultado.textContent = historiaFinal;
     caixaAlternativas.textContent = "";
     caixaResultado.classList.add("mostrar");
-    botaoJogarnovamente.addEventListener("click", jogarNovamente);
+    botaoJogarNovamente.addEventListener("click", jogarNovamente);
 }
 
 function jogarNovamente(){
@@ -55,6 +55,9 @@ function jogarNovamente(){
     historiaFinal = "";
     caixaResultado.classList.remove("mostrar");
     mostraPergunta();
+
 }
 
+
 mostraPergunta();
+
