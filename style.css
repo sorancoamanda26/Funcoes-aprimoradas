@@ -39,7 +39,7 @@ h1 {
 
 h1, .caixa-perguntas, .caixa-resultado{
     font-family: 'Chakra Petch', sans-serif;
-    }
+}
 
 button {
     background-color: var(--cor-secundaria);
@@ -70,11 +70,11 @@ button:hover {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    }
+}
     
     .caixa-resultado{
     display: none;
-    }
+}
     
     .caixa-resultado.mostrar{
     display: block;
